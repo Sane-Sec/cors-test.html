@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>CORS Test</title></head>
+<body>
+<h1>Testing...</h1>
+<script>
+fetch('https://playcanvas.com/api/projects/1567549', {
+  credentials: 'include'
+})
+.then(r => r.json())
+.then(data => {
+  document.body.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+})
+.catch(e => {
+  document.body.innerHTML = 'BLOCKED: ' + e;
+});
+</script>
+</body>
+</html>
